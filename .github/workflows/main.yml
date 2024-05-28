@@ -19,7 +19,7 @@ jobs:
       run: sudo apt install qt6-base-dev qt6-multimedia-dev libavcodec-dev libavutil-dev libavfilter-dev libsdl2-dev libnl-genl-3-dev isc-dhcp-client
 
     - name: Configure CMake
-      run: rm /usr/lib/x86_64-linux-gnu/cmake/Qt6/FindFFmpeg.cmake && cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
+      run: sudo rm /usr/lib/x86_64-linux-gnu/cmake/Qt6/FindFFmpeg.cmake && cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
 
     - name: Build
       run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
